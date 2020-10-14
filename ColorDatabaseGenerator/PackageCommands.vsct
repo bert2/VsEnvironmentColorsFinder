@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <Extern href="stdidcmd.h"/>
+  <Extern href="vsshlids.h"/>
+
+  <Commands package="PackageId">
+    <Groups>
+      <Group guid="CmdSetId" id="MyMenuGroup" priority="0x0600">
+        <Parent guid="guidSHLMainMenu" id="IDM_VS_MENU_TOOLS"/>
+      </Group>
+    </Groups>
+    
+    <Buttons>
+      <Button guid="CmdSetId" id="GrabDarkThemeColorsCommandId" priority="0x0100" type="Button">
+        <Parent guid="CmdSetId" id="MyMenuGroup" />
+        <Strings>
+          <ButtonText>Grab Dark Theme Colors</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="CmdSetId" id="GrabBlueThemeColorsCommandId" priority="0x0200" type="Button">
+        <Parent guid="CmdSetId" id="MyMenuGroup" />
+        <Strings>
+          <ButtonText>Grab Blue Theme Colors</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="CmdSetId" id="GrabLightThemeColorsCommandId" priority="0x0300" type="Button">
+        <Parent guid="CmdSetId" id="MyMenuGroup" />
+        <Strings>
+          <ButtonText>Grab Light Theme Colors</ButtonText>
+        </Strings>
+      </Button>
+    </Buttons>
+  </Commands>
+
+  <Symbols>
+    <GuidSymbol name="PackageId" value="{a3830d63-1920-46ea-8b30-d11553b499c6}" />
+    
+    <GuidSymbol name="CmdSetId" value="{df53d37b-40f2-4d21-be65-3c00efe5eb0f}">
+      <IDSymbol name="MyMenuGroup" value="0x1020" />
+      <IDSymbol name="GrabDarkThemeColorsCommandId" value="0x0100" />
+      <IDSymbol name="GrabBlueThemeColorsCommandId" value="0x0200" />
+      <IDSymbol name="GrabLightThemeColorsCommandId" value="0x0300" />
+    </GuidSymbol>
+  </Symbols>
+</CommandTable>
