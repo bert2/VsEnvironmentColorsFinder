@@ -11,7 +11,7 @@ namespace EnvironmentColorsFinder
         private const int MinNumMatchesToList = 20;
 
         private ColorDatabase colorDatabase = new ColorDatabase();
-        private IEnumerable<ColorMatch> bestMatches = null;
+        private List<ColorMatch> bestMatches = null;
 
         public MainForm()
         {
@@ -62,6 +62,10 @@ namespace EnvironmentColorsFinder
                 {
                     this.bestMatchesComboBox.Items.Add(string.Format($"{bestMatch.Name} ({bestMatch.Diff})"));
                 }
+                else
+                {
+                    break;
+                }
             }
             this.bestMatchesComboBox.SelectedIndex = 0;
         }
@@ -73,7 +77,7 @@ namespace EnvironmentColorsFinder
 
         private void bestMatchesComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var bestMatch = this.bestMatches.ElementAt(this.bestMatchesComboBox.SelectedIndex);
+            var bestMatch = this.bestMatches[this.bestMatchesComboBox.SelectedIndex];
 
             this.darkThemeBestMatchPictureBox.BackColor = bestMatch.Dark;
             this.lightThemeBestMatchPictureBox.BackColor = bestMatch.Light;
@@ -143,7 +147,7 @@ namespace EnvironmentColorsFinder
         {
             if (this.bestMatches.Any())
             {
-                var bestMatch = this.bestMatches.ElementAt(this.bestMatchesComboBox.SelectedIndex);
+                var bestMatch = this.bestMatches[this.bestMatchesComboBox.SelectedIndex];
                 var copyText = bestMatch.Name;
                 Clipboard.SetText(copyText);
             }

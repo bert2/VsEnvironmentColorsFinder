@@ -39,28 +39,26 @@
             await GrabDarkThemeColorsCommand.InitializeAsync(this);
             await GrabBlueThemeColorsCommand.InitializeAsync(this);
             await GrabLightThemeColorsCommand.InitializeAsync(this);
+            await CopyThemeColorsToClipboardCommand.InitializeAsync(this);
         }
     }
 
     public enum Theme { Dark = 0, Blue = 1, Light = 2 }
 
     public class Entry {
-        public readonly string DeclaringType;
+        public readonly string Name;
         public readonly ThemeResourceKey Key;
         public Color this[Theme t] {
             get => colors[(int)t];
             set => colors[(int)t] = value;
         }
         public readonly Color[] colors = new Color[3];
-        public Entry(string declaringType, ThemeResourceKey key) {
-            DeclaringType = declaringType;
-            Key = key;
-        }
+        public Entry(string name, ThemeResourceKey key) => (Name, Key) = (name, key);
         public static Entry Create(Type declaringType, PropertyInfo keyProp) => new Entry(
-            declaringType.Name,
+            $"{declaringType.Name}.{keyProp.Name}",
             (ThemeResourceKey)keyProp.GetValue(null));
         public override string ToString() => new StringBuilder(capacity: 100)
-            .Append(DeclaringType).Append('.').Append(Key.Name).Append(": ")
+            .Append(Name).Append(": ")
             .Append(Hex(this[Theme.Dark])).Append(" (d), ")
             .Append(Hex(this[Theme.Blue])).Append(" (b), ")
             .Append(Hex(this[Theme.Light])).Append(" (l)")

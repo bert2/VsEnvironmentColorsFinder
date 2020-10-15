@@ -45,6 +45,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="CopyThemeColorsToClipboardCommand.cs" />
     <Compile Include="GrabLightThemeColorsCommand.cs" />
     <Compile Include="GrabBlueThemeColorsCommand.cs" />
     <Compile Include="PackageCommands.cs">
@@ -70,6 +71,7 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PresentationCore" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Design" />
