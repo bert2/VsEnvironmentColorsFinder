@@ -152,5 +152,28 @@ namespace EnvironmentColorsFinder
                 Clipboard.SetText(copyText);
             }
         }
+
+        private readonly ToolTip darkThemeBestMatchPictureBoxToolTip = new ToolTip();
+        private void darkThemeBestMatchPictureBox_MouseHover(object sender, EventArgs e) => this
+            .darkThemeBestMatchPictureBoxToolTip
+            .SetToolTip(
+                this.darkThemeBestMatchPictureBox,
+                ColorToHex(this.darkThemeBestMatchPictureBox.BackColor));
+
+        private readonly ToolTip lightThemeBestMatchPictureBoxToolTip = new ToolTip();
+        private void lightThemeBestMatchPictureBox_MouseHover(object sender, EventArgs e) => this
+            .lightThemeBestMatchPictureBoxToolTip
+            .SetToolTip(
+                this.lightThemeBestMatchPictureBox,
+                ColorToHex(this.lightThemeBestMatchPictureBox.BackColor));
+
+        private readonly ToolTip blueThemeBestMatchPictureBoxToolTip = new ToolTip();
+        private void blueThemeBestMatchPictureBox_MouseHover(object sender, EventArgs e) => this
+            .blueThemeBestMatchPictureBoxToolTip
+            .SetToolTip(
+                this.blueThemeBestMatchPictureBox,
+                ColorToHex(this.blueThemeBestMatchPictureBox.BackColor));
+
+        private static string ColorToHex(Color c) => c.Name == "0" ? "n/a" : c.Name.Substring(2);
     }
 }
