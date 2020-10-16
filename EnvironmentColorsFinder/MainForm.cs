@@ -12,9 +12,26 @@
 
         public MainForm() {
             InitializeComponent();
-            toolTip.SetToolTip(pickDarkDesiredColorBtn, "Pick color from screen.");
-            toolTip.SetToolTip(pickLightDesiredColorBtn, "Pick color from screen.");
-            toolTip.SetToolTip(pickBlueDesiredColorBtn, "Pick color from screen.");
+
+            toolTip.SetToolTip(darkDesiredColorChk, "Include dark theme color in matching.");
+            toolTip.SetToolTip(lightDesiredColorChk, "Include light theme color in matching.");
+            toolTip.SetToolTip(blueDesiredColorChk, "Include blue theme color in matching.");
+
+            toolTip.SetToolTip(darkDesiredColorTxt, "Enter HEX code of desired dark theme color here.");
+            toolTip.SetToolTip(lightDesiredColorTxt, "Enter HEX code of desired light theme color here.");
+            toolTip.SetToolTip(blueDesiredColorTxt, "Enter HEX code of desired blue theme color here.");
+
+            toolTip.SetToolTip(pickDarkDesiredColorBtn, "Pick dark theme color from screen.");
+            toolTip.SetToolTip(pickLightDesiredColorBtn, "Pick light theme color from screen.");
+            toolTip.SetToolTip(pickBlueDesiredColorBtn, "Pick blue theme color from screen.");
+
+            toolTip.SetToolTip(darkDesiredColorPic, "Select desired dark theme color with color picker dialog.");
+            toolTip.SetToolTip(lightDesiredColorPic, "Select desired light theme color with color picker dialog.");
+            toolTip.SetToolTip(blueDesiredColorPic, "Select desired blue theme color with color picker dialog.");
+
+            toolTip.SetToolTip(bestMatchesCmb, $"Shows the {MinNumMatchesToList} best matches and the maximum difference to the desired theme color.");
+
+            toolTip.SetToolTip(copyToClipboardBtn, "Copy selected property name to clipboard.");
         }
 
         private void MainForm_Load(object sender, EventArgs e) => RefreshEverything();
@@ -127,6 +144,6 @@
         private void blueBestMatchPic_MouseHover(object sender, EventArgs e) => OnBestMatchPicMouseOver(blueBestMatchPic);
 
         private void OnBestMatchPicMouseOver(PictureBox bestMatchPic)
-            => toolTip.SetToolTip(bestMatchPic, bestMatchPic.BackColor.ToHex());
+            => toolTip.SetToolTip(bestMatchPic, $"Best matching theme color: {bestMatchPic.BackColor.ToHex()}");
     }
 }

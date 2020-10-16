@@ -130,6 +130,7 @@
             this.darkDesiredColorPic.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.darkDesiredColorPic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.darkDesiredColorPic.Cursor = System.Windows.Forms.Cursors.Hand;
             this.darkDesiredColorPic.Location = new System.Drawing.Point(33, 63);
             this.darkDesiredColorPic.Name = "darkDesiredColorPic";
             this.darkDesiredColorPic.Size = new System.Drawing.Size(149, 24);
@@ -142,6 +143,7 @@
             this.lightDesiredColorPic.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lightDesiredColorPic.BackColor = System.Drawing.Color.Blue;
+            this.lightDesiredColorPic.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lightDesiredColorPic.Location = new System.Drawing.Point(238, 63);
             this.lightDesiredColorPic.Name = "lightDesiredColorPic";
             this.lightDesiredColorPic.Size = new System.Drawing.Size(149, 24);
@@ -183,7 +185,7 @@
             this.bestMatchesCmb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.bestMatchesCmb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bestMatchesCmb.FormattingEnabled = true;
-            this.bestMatchesCmb.Location = new System.Drawing.Point(3, 114);
+            this.bestMatchesCmb.Location = new System.Drawing.Point(3, 115);
             this.bestMatchesCmb.Name = "bestMatchesCmb";
             this.bestMatchesCmb.Size = new System.Drawing.Size(434, 24);
             this.bestMatchesCmb.TabIndex = 10;
@@ -207,6 +209,7 @@
             this.blueDesiredColorPic.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.blueDesiredColorPic.BackColor = System.Drawing.Color.Blue;
+            this.blueDesiredColorPic.Cursor = System.Windows.Forms.Cursors.Hand;
             this.blueDesiredColorPic.Location = new System.Drawing.Point(443, 63);
             this.blueDesiredColorPic.Name = "blueDesiredColorPic";
             this.blueDesiredColorPic.Size = new System.Drawing.Size(149, 24);
