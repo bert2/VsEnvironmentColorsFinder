@@ -28,7 +28,7 @@
                 .Aggregate(
                     new StringBuilder(capacity: 176 * ColorDatabaseGeneratorPackage.DB.Length),
                     (sb, e) => sb
-                        .Append("new Entry(")
+                        .Append("new ColorDbEntry(")
                             .Append('\"').Append(e.Name).Append("\", ")
                             .Append("Color.FromArgb(")
                                 .Append(e[Theme.Dark].R).Append(',')

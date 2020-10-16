@@ -1,9 +1,10 @@
 ﻿namespace EnvironmentColorsFinder {
     using System.Drawing;
 
-    // Don't change anything here without changing the contructor call in the ColorDatabaseGenerator.
-    public struct Entry {
-        public Entry(string name, Color dark, Color light, Color blue) {
+    // Don't change anything here without changing `CopyThemeColorsToClipboardCommand`
+    // in the `ColorDatabaseGenerator` project.
+    public struct ColorDbEntry {
+        public ColorDbEntry(string name, Color dark, Color light, Color blue) {
             Name = name;
             Dark = dark;
             Light = light;
