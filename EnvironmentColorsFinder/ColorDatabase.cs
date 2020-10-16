@@ -1,4 +1,5 @@
 ﻿namespace EnvironmentColorsFinder {
+    using System;
     using System.Collections.Generic;
     using System.Drawing;
     using System.Linq;
@@ -12,12 +13,12 @@
                 Blue = blue;
             }
 
-            public uint CalculateMaxColorDiff(Color? dark, Color? light, Color? blue) {
-                var diffs = new List<uint>();
+            public int CalculateMaxColorDiff(Color? dark, Color? light, Color? blue) {
+                var diffs = new List<int>(capacity: 3);
                 if (dark != null) diffs.Add(ColorHelpers.CalculateColorDiff(dark.Value, Dark));
                 if (light != null) diffs.Add(ColorHelpers.CalculateColorDiff(light.Value, Light));
                 if (blue != null) diffs.Add(ColorHelpers.CalculateColorDiff(blue.Value, Blue));
-                return diffs.Any() ? diffs.Max() : 0;
+                return diffs.Any() ? (int)Math.Round(diffs.Average()) : 0;
             }
 
             public string Name;

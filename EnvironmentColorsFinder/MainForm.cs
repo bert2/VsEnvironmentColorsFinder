@@ -29,7 +29,7 @@
             toolTip.SetToolTip(lightDesiredColorPic, "Select desired light theme color with color picker dialog.");
             toolTip.SetToolTip(blueDesiredColorPic, "Select desired blue theme color with color picker dialog.");
 
-            toolTip.SetToolTip(bestMatchesCmb, $"Shows the {MinNumMatchesToList} best matches and the maximum difference to the desired theme color.");
+            toolTip.SetToolTip(bestMatchesCmb, $"The top {MinNumMatchesToList} matches (incl. color difference).");
 
             toolTip.SetToolTip(copyToClipboardBtn, "Copy selected property name to clipboard.");
         }

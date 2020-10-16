@@ -20,14 +20,14 @@
 
         public static string ToHex(this Color c) => c.R.ToString("X2") + c.G.ToString("X2") + c.B.ToString("X2");
 
-        public static uint CalculateColorDiff(Color a, Color b) =>
+        public static int CalculateColorDiff(Color a, Color b) =>
             CalculateColorElementDiff(a.R, b.R) +
             CalculateColorElementDiff(a.G, b.G) +
             CalculateColorElementDiff(a.B, b.B);
 
-        private static uint CalculateColorElementDiff(byte a, byte b) {
+        private static int CalculateColorElementDiff(byte a, byte b) {
             var diff = a - b;
-            return (uint)(diff * diff);
+            return diff * diff;
         }
 
         private static byte ParseHexByte(string hex) => byte.Parse(hex, NumberStyles.AllowHexSpecifier);

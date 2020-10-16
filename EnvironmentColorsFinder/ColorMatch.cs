@@ -2,7 +2,7 @@
     using System.Drawing;
 
     public struct ColorMatch {
-        public ColorMatch(string name, Color dark, Color light, Color blue, uint diff) {
+        public ColorMatch(string name, Color dark, Color light, Color blue, int diff) {
             Name = name;
             Dark = dark;
             Light = light;
@@ -11,7 +11,7 @@
         }
 
         public string Name;
-        public uint Diff;
+        public int Diff;
         public Color Dark;
         public Color Light;
         public Color Blue;
