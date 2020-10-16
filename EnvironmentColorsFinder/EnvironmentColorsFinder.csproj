@@ -86,5 +86,10 @@
   <ItemGroup>
     <None Include="Resources\ColorPicker_12x_16x.png" />
   </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="ColorMine">
+      <Version>1.1.3</Version>
+    </PackageReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

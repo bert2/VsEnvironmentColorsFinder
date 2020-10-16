@@ -59,8 +59,8 @@
             foreach (var bestMatch in bestMatches) {
                 // We want to shoe all the matches that have a diff of zero,
                 // but we should always show at least MaxNumMatchesToList matches in any case.
-                if (bestMatch.Diff == 0 || bestMatchesCmb.Items.Count < MinNumMatchesToList) {
-                    _ = bestMatchesCmb.Items.Add(string.Format($"{bestMatch.Name} ({bestMatch.Diff})"));
+                if (bestMatch.Diff <= double.Epsilon || bestMatchesCmb.Items.Count < MinNumMatchesToList) {
+                    _ = bestMatchesCmb.Items.Add(string.Format($"{bestMatch.Name} ({bestMatch.Diff:N1})"));
                 } else {
                     break;
                 }

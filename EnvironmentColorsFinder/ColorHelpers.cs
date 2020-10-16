@@ -3,6 +3,9 @@
     using System.Globalization;
     using System.Text.RegularExpressions;
 
+    using ColorMine.ColorSpaces;
+    using ColorMine.ColorSpaces.Comparisons;
+
     public static class ColorHelpers {
         public static Color? ParseColor(string rgbHexString) {
             if (!Regex.IsMatch(rgbHexString, "^[0-9A-Fa-f]{6}$")) return null;
@@ -20,15 +23,9 @@
 
         public static string ToHex(this Color c) => c.R.ToString("X2") + c.G.ToString("X2") + c.B.ToString("X2");
 
-        public static int CalculateColorDiff(Color a, Color b) =>
-            CalculateColorElementDiff(a.R, b.R) +
-            CalculateColorElementDiff(a.G, b.G) +
-            CalculateColorElementDiff(a.B, b.B);
+        public static double CalculateColorDiff(Color a, Color b) => a.ToRgb().Compare(b.ToRgb(), new Cie1976Comparison());
 
-        private static int CalculateColorElementDiff(byte a, byte b) {
-            var diff = a - b;
-            return diff * diff;
-        }
+        private static Rgb ToRgb(this Color c) => new Rgb { R = c.R, G = c.G, B = c.B };
 
         private static byte ParseHexByte(string hex) => byte.Parse(hex, NumberStyles.AllowHexSpecifier);
     }
