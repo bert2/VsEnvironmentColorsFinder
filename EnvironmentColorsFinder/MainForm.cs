@@ -87,10 +87,10 @@
             => OnDesiredColorPicClick(blueDesiredColorPic, blueDesiredColorTxt);
 
         private void OnDesiredColorPicClick(PictureBox desiredColorPic, TextBox desiredColorTxt) {
-            colorDialog.Color = desiredColorPic.BackColor;
-            var result = colorDialog.ShowDialog();
+            colorPickerDlg.Color = desiredColorPic.BackColor;
+            var result = colorPickerDlg.ShowDialog();
             if (result == DialogResult.OK) {
-                desiredColorTxt.Text = colorDialog.Color.ToHex();
+                desiredColorTxt.Text = colorPickerDlg.Color.ToHex();
                 Refresh();
             }
         }
@@ -109,7 +109,7 @@
 
         private void OnPickDesiredColorBtnClick(TextBox desiredColorTxt) {
             Hide();
-            new ColorPickOverlay(this, c => desiredColorTxt.Text = c.ToHex()).Show();
+            new ColorPickOverlayFrm(this, c => desiredColorTxt.Text = c.ToHex()).Show();
         }
 
         private void CopyToClipboardBtn_Click(object sender, EventArgs e) {
@@ -120,13 +120,13 @@
             }
         }
 
-        private void darkBestMatchPic_MouseHover(object sender, EventArgs e) => toolTip
-            .SetToolTip(darkBestMatchPic, darkBestMatchPic.BackColor.ToHex());
+        private void darkBestMatchPic_MouseHover(object sender, EventArgs e) => OnBestMatchPicMouseOver(darkBestMatchPic);
 
-        private void lightBestMatchPic_MouseHover(object sender, EventArgs e) => toolTip
-            .SetToolTip(lightBestMatchPic, lightBestMatchPic.BackColor.ToHex());
+        private void lightBestMatchPic_MouseHover(object sender, EventArgs e) => OnBestMatchPicMouseOver(lightBestMatchPic);
 
-        private void blueBestMatchPic_MouseHover(object sender, EventArgs e) => toolTip
-            .SetToolTip(blueBestMatchPic, blueBestMatchPic.BackColor.ToHex());
+        private void blueBestMatchPic_MouseHover(object sender, EventArgs e) => OnBestMatchPicMouseOver(blueBestMatchPic);
+
+        private void OnBestMatchPicMouseOver(PictureBox bestMatchPic)
+            => toolTip.SetToolTip(bestMatchPic, bestMatchPic.BackColor.ToHex());
     }
 }

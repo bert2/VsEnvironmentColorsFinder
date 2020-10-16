@@ -4,13 +4,13 @@
     using System.Drawing.Imaging;
     using System.Windows.Forms;
 
-    public partial class ColorPickOverlay : Form {
-        private readonly MainForm mainForm;
+    public partial class ColorPickOverlayFrm : Form {
+        private readonly Form owner;
         private readonly Action<Color> handlePicked;
 
-        public ColorPickOverlay(MainForm owner, Action<Color> handlePicked) {
+        public ColorPickOverlayFrm(Form owner, Action<Color> handlePicked) {
             InitializeComponent();
-            mainForm = owner;
+            this.owner = owner;
             this.handlePicked = handlePicked;
         }
 
@@ -24,7 +24,7 @@
             var gfx = Graphics.FromImage(bitmap);
             gfx.CopyFromScreen(click.Location, new Point(0, 0), new Size(1, 1));
 
-            mainForm.Show();
+            owner.Show();
             handlePicked(bitmap.GetPixel(0, 0));
 
             Close();
@@ -32,7 +32,7 @@
 
         protected override bool ProcessDialogKey(Keys keyData) {
             if (keyData == Keys.Escape && ModifierKeys == Keys.None) {
-                mainForm.Show();
+                owner.Show();
                 Close();
                 return true;
             }

@@ -49,11 +49,11 @@
     <Compile Include="ColorDatabase.cs" />
     <Compile Include="ColorHelpers.cs" />
     <Compile Include="ColorMatch.cs" />
-    <Compile Include="ColorPickOverlay.cs">
+    <Compile Include="ColorPickOverlayForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ColorPickOverlay.Designer.cs">
-      <DependentUpon>ColorPickOverlay.cs</DependentUpon>
+    <Compile Include="ColorPickOverlayForm.Designer.cs">
+      <DependentUpon>ColorPickOverlayForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -63,8 +63,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="ColorPickOverlay.resx">
-      <DependentUpon>ColorPickOverlay.cs</DependentUpon>
+    <EmbeddedResource Include="ColorPickOverlayForm.resx">
+      <DependentUpon>ColorPickOverlayForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

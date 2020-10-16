@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.Label label1;
-            System.Windows.Forms.Label label2;
-            System.Windows.Forms.Label label3;
+            System.Windows.Forms.Label darkThemeLbl;
+            System.Windows.Forms.Label lightThemeLbl;
+            System.Windows.Forms.Label blueThemeLbl;
             this.darkDesiredColorTxt = new System.Windows.Forms.TextBox();
             this.lightDesiredColorTxt = new System.Windows.Forms.TextBox();
             this.darkDesiredColorPic = new System.Windows.Forms.PictureBox();
@@ -44,62 +44,62 @@
             this.darkDesiredColorChk = new System.Windows.Forms.CheckBox();
             this.lightDesiredColorChk = new System.Windows.Forms.CheckBox();
             this.blueDesiredColorChk = new System.Windows.Forms.CheckBox();
-            this.colorDialog = new System.Windows.Forms.ColorDialog();
+            this.colorPickerDlg = new System.Windows.Forms.ColorDialog();
             this.copyToClipboardBtn = new System.Windows.Forms.Button();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPnl = new System.Windows.Forms.TableLayoutPanel();
             this.pickDarkDesiredColorBtn = new System.Windows.Forms.Button();
             this.pickLightDesiredColorBtn = new System.Windows.Forms.Button();
             this.pickBlueDesiredColorBtn = new System.Windows.Forms.Button();
-            label1 = new System.Windows.Forms.Label();
-            label2 = new System.Windows.Forms.Label();
-            label3 = new System.Windows.Forms.Label();
+            darkThemeLbl = new System.Windows.Forms.Label();
+            lightThemeLbl = new System.Windows.Forms.Label();
+            blueThemeLbl = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.darkDesiredColorPic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lightDesiredColorPic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.darkBestMatchPic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lightBestMatchPic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.blueBestMatchPic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.blueDesiredColorPic)).BeginInit();
-            this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPnl.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
+            // darkThemeLbl
             // 
-            label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            darkThemeLbl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel1.SetColumnSpan(label1, 2);
-            label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label1.Location = new System.Drawing.Point(3, 0);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(179, 20);
-            label1.TabIndex = 0;
-            label1.Text = "Dark theme";
-            label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.tableLayoutPnl.SetColumnSpan(darkThemeLbl, 2);
+            darkThemeLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            darkThemeLbl.Location = new System.Drawing.Point(3, 0);
+            darkThemeLbl.Name = "darkThemeLbl";
+            darkThemeLbl.Size = new System.Drawing.Size(179, 20);
+            darkThemeLbl.TabIndex = 0;
+            darkThemeLbl.Text = "Dark theme";
+            darkThemeLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label2
+            // lightThemeLbl
             // 
-            label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            lightThemeLbl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel1.SetColumnSpan(label2, 2);
-            label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label2.Location = new System.Drawing.Point(208, 0);
-            label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(179, 20);
-            label2.TabIndex = 1;
-            label2.Text = "Light theme";
-            label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.tableLayoutPnl.SetColumnSpan(lightThemeLbl, 2);
+            lightThemeLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            lightThemeLbl.Location = new System.Drawing.Point(208, 0);
+            lightThemeLbl.Name = "lightThemeLbl";
+            lightThemeLbl.Size = new System.Drawing.Size(179, 20);
+            lightThemeLbl.TabIndex = 1;
+            lightThemeLbl.Text = "Light theme";
+            lightThemeLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label3
+            // blueThemeLbl
             // 
-            label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            blueThemeLbl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel1.SetColumnSpan(label3, 2);
-            label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label3.Location = new System.Drawing.Point(413, 0);
-            label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(179, 20);
-            label3.TabIndex = 11;
-            label3.Text = "Blue theme";
-            label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.tableLayoutPnl.SetColumnSpan(blueThemeLbl, 2);
+            blueThemeLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            blueThemeLbl.Location = new System.Drawing.Point(413, 0);
+            blueThemeLbl.Name = "blueThemeLbl";
+            blueThemeLbl.Size = new System.Drawing.Size(179, 20);
+            blueThemeLbl.TabIndex = 11;
+            blueThemeLbl.Text = "Blue theme";
+            blueThemeLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // darkDesiredColorTxt
             // 
@@ -154,7 +154,7 @@
             this.darkBestMatchPic.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.darkBestMatchPic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.tableLayoutPanel1.SetColumnSpan(this.darkBestMatchPic, 2);
+            this.tableLayoutPnl.SetColumnSpan(this.darkBestMatchPic, 2);
             this.darkBestMatchPic.Location = new System.Drawing.Point(3, 145);
             this.darkBestMatchPic.Name = "darkBestMatchPic";
             this.darkBestMatchPic.Size = new System.Drawing.Size(179, 24);
@@ -167,7 +167,7 @@
             this.lightBestMatchPic.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lightBestMatchPic.BackColor = System.Drawing.Color.Blue;
-            this.tableLayoutPanel1.SetColumnSpan(this.lightBestMatchPic, 2);
+            this.tableLayoutPnl.SetColumnSpan(this.lightBestMatchPic, 2);
             this.lightBestMatchPic.Location = new System.Drawing.Point(208, 145);
             this.lightBestMatchPic.Name = "lightBestMatchPic";
             this.lightBestMatchPic.Size = new System.Drawing.Size(179, 24);
@@ -179,11 +179,11 @@
             // 
             this.bestMatchesCmb.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel1.SetColumnSpan(this.bestMatchesCmb, 7);
+            this.tableLayoutPnl.SetColumnSpan(this.bestMatchesCmb, 7);
             this.bestMatchesCmb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.bestMatchesCmb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bestMatchesCmb.FormattingEnabled = true;
-            this.bestMatchesCmb.Location = new System.Drawing.Point(3, 115);
+            this.bestMatchesCmb.Location = new System.Drawing.Point(3, 114);
             this.bestMatchesCmb.Name = "bestMatchesCmb";
             this.bestMatchesCmb.Size = new System.Drawing.Size(434, 24);
             this.bestMatchesCmb.TabIndex = 10;
@@ -194,7 +194,7 @@
             this.blueBestMatchPic.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.blueBestMatchPic.BackColor = System.Drawing.Color.Blue;
-            this.tableLayoutPanel1.SetColumnSpan(this.blueBestMatchPic, 2);
+            this.tableLayoutPnl.SetColumnSpan(this.blueBestMatchPic, 2);
             this.blueBestMatchPic.Location = new System.Drawing.Point(413, 145);
             this.blueBestMatchPic.Name = "blueBestMatchPic";
             this.blueBestMatchPic.Size = new System.Drawing.Size(179, 24);
@@ -268,9 +268,9 @@
             this.blueDesiredColorChk.UseVisualStyleBackColor = true;
             this.blueDesiredColorChk.CheckedChanged += new System.EventHandler(this.BlueDesiredColorChk_CheckedChanged);
             // 
-            // colorDialog
+            // colorPickerDlg
             // 
-            this.colorDialog.SolidColorOnly = true;
+            this.colorPickerDlg.SolidColorOnly = true;
             // 
             // copyToClipboardBtn
             // 
@@ -285,49 +285,49 @@
             this.copyToClipboardBtn.UseVisualStyleBackColor = true;
             this.copyToClipboardBtn.Click += new System.EventHandler(this.CopyToClipboardBtn_Click);
             // 
-            // tableLayoutPanel1
+            // tableLayoutPnl
             // 
-            this.tableLayoutPanel1.ColumnCount = 8;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.Controls.Add(this.darkDesiredColorChk, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.darkDesiredColorTxt, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(label1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(label3, 6, 0);
-            this.tableLayoutPanel1.Controls.Add(this.blueDesiredColorTxt, 7, 1);
-            this.tableLayoutPanel1.Controls.Add(this.blueDesiredColorChk, 6, 1);
-            this.tableLayoutPanel1.Controls.Add(this.lightDesiredColorTxt, 4, 1);
-            this.tableLayoutPanel1.Controls.Add(label2, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(this.lightDesiredColorChk, 3, 1);
-            this.tableLayoutPanel1.Controls.Add(this.darkBestMatchPic, 0, 5);
-            this.tableLayoutPanel1.Controls.Add(this.lightBestMatchPic, 3, 5);
-            this.tableLayoutPanel1.Controls.Add(this.blueBestMatchPic, 6, 5);
-            this.tableLayoutPanel1.Controls.Add(this.copyToClipboardBtn, 7, 4);
-            this.tableLayoutPanel1.Controls.Add(this.bestMatchesCmb, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.darkDesiredColorPic, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.blueDesiredColorPic, 7, 2);
-            this.tableLayoutPanel1.Controls.Add(this.lightDesiredColorPic, 4, 2);
-            this.tableLayoutPanel1.Controls.Add(this.pickDarkDesiredColorBtn, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.pickLightDesiredColorBtn, 3, 2);
-            this.tableLayoutPanel1.Controls.Add(this.pickBlueDesiredColorBtn, 6, 2);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 6;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(595, 172);
-            this.tableLayoutPanel1.TabIndex = 19;
+            this.tableLayoutPnl.ColumnCount = 8;
+            this.tableLayoutPnl.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPnl.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPnl.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPnl.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPnl.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPnl.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPnl.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPnl.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPnl.Controls.Add(this.darkDesiredColorChk, 0, 1);
+            this.tableLayoutPnl.Controls.Add(this.darkDesiredColorTxt, 1, 1);
+            this.tableLayoutPnl.Controls.Add(darkThemeLbl, 0, 0);
+            this.tableLayoutPnl.Controls.Add(blueThemeLbl, 6, 0);
+            this.tableLayoutPnl.Controls.Add(this.blueDesiredColorTxt, 7, 1);
+            this.tableLayoutPnl.Controls.Add(this.blueDesiredColorChk, 6, 1);
+            this.tableLayoutPnl.Controls.Add(this.lightDesiredColorTxt, 4, 1);
+            this.tableLayoutPnl.Controls.Add(lightThemeLbl, 3, 0);
+            this.tableLayoutPnl.Controls.Add(this.lightDesiredColorChk, 3, 1);
+            this.tableLayoutPnl.Controls.Add(this.darkBestMatchPic, 0, 5);
+            this.tableLayoutPnl.Controls.Add(this.lightBestMatchPic, 3, 5);
+            this.tableLayoutPnl.Controls.Add(this.blueBestMatchPic, 6, 5);
+            this.tableLayoutPnl.Controls.Add(this.copyToClipboardBtn, 7, 4);
+            this.tableLayoutPnl.Controls.Add(this.bestMatchesCmb, 0, 4);
+            this.tableLayoutPnl.Controls.Add(this.darkDesiredColorPic, 1, 2);
+            this.tableLayoutPnl.Controls.Add(this.blueDesiredColorPic, 7, 2);
+            this.tableLayoutPnl.Controls.Add(this.lightDesiredColorPic, 4, 2);
+            this.tableLayoutPnl.Controls.Add(this.pickDarkDesiredColorBtn, 0, 2);
+            this.tableLayoutPnl.Controls.Add(this.pickLightDesiredColorBtn, 3, 2);
+            this.tableLayoutPnl.Controls.Add(this.pickBlueDesiredColorBtn, 6, 2);
+            this.tableLayoutPnl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPnl.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPnl.Name = "tableLayoutPnl";
+            this.tableLayoutPnl.RowCount = 6;
+            this.tableLayoutPnl.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPnl.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPnl.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPnl.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPnl.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPnl.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPnl.Size = new System.Drawing.Size(595, 172);
+            this.tableLayoutPnl.TabIndex = 19;
             // 
             // pickDarkDesiredColorBtn
             // 
@@ -367,7 +367,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(595, 172);
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.tableLayoutPnl);
             this.MinimumSize = new System.Drawing.Size(355, 211);
             this.Name = "MainForm";
             this.Text = "EnvironmentColors finder";
@@ -378,8 +378,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.lightBestMatchPic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.blueBestMatchPic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.blueDesiredColorPic)).EndInit();
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
+            this.tableLayoutPnl.ResumeLayout(false);
+            this.tableLayoutPnl.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -399,9 +399,9 @@
         private System.Windows.Forms.CheckBox darkDesiredColorChk;
         private System.Windows.Forms.CheckBox lightDesiredColorChk;
         private System.Windows.Forms.CheckBox blueDesiredColorChk;
-        private System.Windows.Forms.ColorDialog colorDialog;
+        private System.Windows.Forms.ColorDialog colorPickerDlg;
         private System.Windows.Forms.Button copyToClipboardBtn;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPnl;
         private System.Windows.Forms.Button pickDarkDesiredColorBtn;
         private System.Windows.Forms.Button pickLightDesiredColorBtn;
         private System.Windows.Forms.Button pickBlueDesiredColorBtn;
