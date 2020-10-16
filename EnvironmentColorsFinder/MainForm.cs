@@ -17,9 +17,9 @@
             toolTip.SetToolTip(pickBlueDesiredColorBtn, "Pick color from screen.");
         }
 
-        private void MainForm_Load(object sender, EventArgs e) => Refresh();
+        private void MainForm_Load(object sender, EventArgs e) => RefreshEverything();
 
-        private void Refresh() {
+        private void RefreshEverything() {
             Color? desiredDarkColor = null;
             Color? desiredLightColor = null;
             Color? desiredBlueColor = null;
@@ -64,17 +64,17 @@
 
         private void DarkDesiredColorChk_CheckedChanged(object sender, EventArgs e) {
             darkDesiredColorTxt.Enabled = darkDesiredColorChk.Checked;
-            Refresh();
+            RefreshEverything();
         }
 
         private void LightDesiredColorChk_CheckedChanged(object sender, EventArgs e) {
             lightDesiredColorTxt.Enabled = lightDesiredColorChk.Checked;
-            Refresh();
+            RefreshEverything();
         }
 
         private void BlueDesiredColorChk_CheckedChanged(object sender, EventArgs e) {
             blueDesiredColorTxt.Enabled = blueDesiredColorChk.Checked;
-            Refresh();
+            RefreshEverything();
         }
 
         private void DarkDesiredColorPic_Click(object sender, EventArgs e)
@@ -91,15 +91,15 @@
             var result = colorPickerDlg.ShowDialog();
             if (result == DialogResult.OK) {
                 desiredColorTxt.Text = colorPickerDlg.Color.ToHex();
-                Refresh();
+                RefreshEverything();
             }
         }
 
-        private void DarkDesiredColorTxt_TextChanged(object sender, EventArgs e) => Refresh();
+        private void DarkDesiredColorTxt_TextChanged(object sender, EventArgs e) => RefreshEverything();
 
-        private void LightDesiredColorTxt_TextChanged(object sender, EventArgs e) => Refresh();
+        private void LightDesiredColorTxt_TextChanged(object sender, EventArgs e) => RefreshEverything();
 
-        private void BlueDesiredColorTxt_TextChanged(object sender, EventArgs e) => Refresh();
+        private void BlueDesiredColorTxt_TextChanged(object sender, EventArgs e) => RefreshEverything();
 
         private void PickDarkDesiredColorBtn_Click(object sender, EventArgs e) => OnPickDesiredColorBtnClick(darkDesiredColorTxt);
 
