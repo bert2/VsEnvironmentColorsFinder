@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text.RegularExpressions;
+﻿namespace EnvironmentColorsFinder {
+    using System.Drawing;
+    using System.Globalization;
+    using System.Text.RegularExpressions;
 
-namespace EnvironmentColorsFinder
-{
-    internal static class ColorHelpers
-    {
-        public static Color? ParseColor(string rgbHexString)
-        {
+    public static class ColorHelpers {
+        public static Color? ParseColor(string rgbHexString) {
             if (!Regex.IsMatch(rgbHexString, "^[0-9A-Fa-f]{6}$")) return null;
 
             var redHexString = rgbHexString.Substring(0, 2);
@@ -23,9 +18,6 @@ namespace EnvironmentColorsFinder
             return Color.FromArgb(red, green, blue);
         }
 
-        private static byte ParseHexByte(string hexString) =>
-            (byte)int.Parse(hexString, System.Globalization.NumberStyles.AllowHexSpecifier);
-
         public static string ToHex(this Color c) => c.R.ToString("X2") + c.G.ToString("X2") + c.B.ToString("X2");
 
         public static uint CalculateColorDiff(Color a, Color b) =>
@@ -33,10 +25,11 @@ namespace EnvironmentColorsFinder
             CalculateColorElementDiff(a.G, b.G) +
             CalculateColorElementDiff(a.B, b.B);
 
-        private static uint CalculateColorElementDiff(byte a, byte b)
-        {
+        private static uint CalculateColorElementDiff(byte a, byte b) {
             var diff = a - b;
             return (uint)(diff * diff);
         }
+
+        private static byte ParseHexByte(string hex) => byte.Parse(hex, NumberStyles.AllowHexSpecifier);
     }
 }

@@ -12,157 +12,121 @@
 
         public MainForm() {
             InitializeComponent();
-            toolTip.SetToolTip(pickDarkThemeDesiredColorBtn, "Pick color from screen.");
-            toolTip.SetToolTip(pickLightThemeDesiredColorBtn, "Pick color from screen.");
-            toolTip.SetToolTip(pickBlueThemeDesiredColorBtn, "Pick color from screen.");
+            toolTip.SetToolTip(pickDarkDesiredColorBtn, "Pick color from screen.");
+            toolTip.SetToolTip(pickLightDesiredColorBtn, "Pick color from screen.");
+            toolTip.SetToolTip(pickBlueDesiredColorBtn, "Pick color from screen.");
         }
 
-        private void MainForm_Load(object sender, EventArgs e) => RefreshEverything();
+        private void MainForm_Load(object sender, EventArgs e) => Refresh();
 
-        private void RefreshEverything() {
+        private void Refresh() {
             Color? desiredDarkColor = null;
             Color? desiredLightColor = null;
             Color? desiredBlueColor = null;
 
             // Get the colors from the RGB hex strings that the user has entered.
-            if (darkThemeDesiredColorCheckBox.Checked)
-                desiredDarkColor = ColorHelpers.ParseColor(darkThemeDesiredColorTextBox.Text);
-            if (lightThemeDesiredColorCheckBox.Checked)
-                desiredLightColor = ColorHelpers.ParseColor(lightThemeDesiredColorTextBox.Text);
-            if (blueThemeDesiredColorCheckBox.Checked)
-                desiredBlueColor = ColorHelpers.ParseColor(blueThemeDesiredColorTextBox.Text);
+            if (darkDesiredColorChk.Checked)
+                desiredDarkColor = ColorHelpers.ParseColor(darkDesiredColorTxt.Text);
+            if (lightDesiredColorChk.Checked)
+                desiredLightColor = ColorHelpers.ParseColor(lightDesiredColorTxt.Text);
+            if (blueDesiredColorChk.Checked)
+                desiredBlueColor = ColorHelpers.ParseColor(blueDesiredColorTxt.Text);
 
             // Show the selected colors under the textboxes,
             // or black if the theme is not selected for inclusion.
-            darkThemeDesiredColorPictureBox.BackColor = desiredDarkColor ?? Color.Black;
-            lightThemeDesiredColorPictureBox.BackColor = desiredLightColor ?? Color.Black;
-            blueThemeDesiredColorPictureBox.BackColor = desiredBlueColor ?? Color.Black;
+            darkDesiredColorPic.BackColor = desiredDarkColor ?? Color.Black;
+            lightDesiredColorPic.BackColor = desiredLightColor ?? Color.Black;
+            blueDesiredColorPic.BackColor = desiredBlueColor ?? Color.Black;
 
             // Calculate the best matches for the user-entered color hex strings.
             bestMatches = colorDatabase.CalculateBestMatches(desiredDarkColor, desiredLightColor, desiredBlueColor);
 
             // Populate the dropdown with the best matches.
-            bestMatchesComboBox.Items.Clear();
+            bestMatchesCmb.Items.Clear();
             foreach (var bestMatch in bestMatches) {
                 // We want to shoe all the matches that have a diff of zero,
                 // but we should always show at least MaxNumMatchesToList matches in any case.
-                if (bestMatch.Diff == 0 || bestMatchesComboBox.Items.Count < MinNumMatchesToList) {
-                    _ = bestMatchesComboBox.Items.Add(string.Format($"{bestMatch.Name} ({bestMatch.Diff})"));
+                if (bestMatch.Diff == 0 || bestMatchesCmb.Items.Count < MinNumMatchesToList) {
+                    _ = bestMatchesCmb.Items.Add(string.Format($"{bestMatch.Name} ({bestMatch.Diff})"));
                 } else {
                     break;
                 }
             }
-            bestMatchesComboBox.SelectedIndex = 0;
+            bestMatchesCmb.SelectedIndex = 0;
         }
 
-        private void refreshButton_Click(object sender, EventArgs e) {
-            RefreshEverything();
+        private void bestMatchesCmb_SelectedIndexChanged(object sender, EventArgs e) {
+            var bestMatch = bestMatches[bestMatchesCmb.SelectedIndex];
+            darkBestMatchPic.BackColor = bestMatch.Dark;
+            lightBestMatchPic.BackColor = bestMatch.Light;
+            blueBestMatchPic.BackColor = bestMatch.Blue;
         }
 
-        private void bestMatchesComboBox_SelectedIndexChanged(object sender, EventArgs e) {
-            var bestMatch = bestMatches[bestMatchesComboBox.SelectedIndex];
-
-            darkThemeBestMatchPictureBox.BackColor = bestMatch.Dark;
-            lightThemeBestMatchPictureBox.BackColor = bestMatch.Light;
-            blueThemeBestMatchPictureBox.BackColor = bestMatch.Blue;
+        private void DarkDesiredColorChk_CheckedChanged(object sender, EventArgs e) {
+            darkDesiredColorTxt.Enabled = darkDesiredColorChk.Checked;
+            Refresh();
         }
 
-        private void DarkThemeDesiredColorCheckBox_CheckedChanged(object sender, EventArgs e) {
-            darkThemeDesiredColorTextBox.Enabled = darkThemeDesiredColorCheckBox.Checked;
-            RefreshEverything();
+        private void LightDesiredColorChk_CheckedChanged(object sender, EventArgs e) {
+            lightDesiredColorTxt.Enabled = lightDesiredColorChk.Checked;
+            Refresh();
         }
 
-        private void LightThemeDesiredColorCheckBox_CheckedChanged(object sender, EventArgs e) {
-            lightThemeDesiredColorTextBox.Enabled = lightThemeDesiredColorCheckBox.Checked;
-            RefreshEverything();
+        private void BlueDesiredColorChk_CheckedChanged(object sender, EventArgs e) {
+            blueDesiredColorTxt.Enabled = blueDesiredColorChk.Checked;
+            Refresh();
         }
 
-        private void BlueThemeDesiredColorCheckBox_CheckedChanged(object sender, EventArgs e) {
-            blueThemeDesiredColorTextBox.Enabled = blueThemeDesiredColorCheckBox.Checked;
-            RefreshEverything();
-        }
+        private void DarkDesiredColorPic_Click(object sender, EventArgs e)
+            => OnDesiredColorPicClick(darkDesiredColorPic, darkDesiredColorTxt);
 
-        private void DarkThemeDesiredColorPictureBox_Click(object sender, EventArgs e) {
-            OnPictureBoxClick(ref darkThemeBestMatchPictureBox, ref darkThemeDesiredColorTextBox);
-        }
+        private void LightDesiredColorPic_Click(object sender, EventArgs e)
+            => OnDesiredColorPicClick(lightDesiredColorPic, lightDesiredColorTxt);
 
-        private void LightThemeDesiredColorPictureBox_Click(object sender, EventArgs e) {
-            OnPictureBoxClick(ref lightThemeBestMatchPictureBox, ref lightThemeDesiredColorTextBox);
-        }
+        private void BlueDesiredColorPic_Click(object sender, EventArgs e)
+            => OnDesiredColorPicClick(blueDesiredColorPic, blueDesiredColorTxt);
 
-        private void BlueThemeDesiredColorPictureBox_Click(object sender, EventArgs e) {
-            OnPictureBoxClick(ref blueThemeBestMatchPictureBox, ref blueThemeDesiredColorTextBox);
-        }
-
-        private void OnPictureBoxClick(ref PictureBox pictureBox, ref TextBox textBox) {
-            colorDialog.Color = pictureBox.BackColor;
+        private void OnDesiredColorPicClick(PictureBox desiredColorPic, TextBox desiredColorTxt) {
+            colorDialog.Color = desiredColorPic.BackColor;
             var result = colorDialog.ShowDialog();
             if (result == DialogResult.OK) {
-                textBox.Text = colorDialog.Color.ToHex();
-                RefreshEverything();
+                desiredColorTxt.Text = colorDialog.Color.ToHex();
+                Refresh();
             }
         }
 
-        private void DarkThemeDesiredColorTextBox_TextChanged(object sender, EventArgs e) {
-            RefreshEverything();
-        }
+        private void DarkDesiredColorTxt_TextChanged(object sender, EventArgs e) => Refresh();
 
-        private void LightThemeDesiredColorTextBox_TextChanged(object sender, EventArgs e) {
-            RefreshEverything();
-        }
+        private void LightDesiredColorTxt_TextChanged(object sender, EventArgs e) => Refresh();
 
-        private void BlueThemeDesiredColorTextBox_TextChanged(object sender, EventArgs e) {
-            RefreshEverything();
-        }
+        private void BlueDesiredColorTxt_TextChanged(object sender, EventArgs e) => Refresh();
 
-        private void PickDarkThemeDesiredColorBtn_Click(object sender, EventArgs e) {
+        private void PickDarkDesiredColorBtn_Click(object sender, EventArgs e) => OnPickDesiredColorBtnClick(darkDesiredColorTxt);
+
+        private void PickLightDesiredColorBtn_Click(object sender, EventArgs e) => OnPickDesiredColorBtnClick(lightDesiredColorTxt);
+
+        private void PickBlueDesiredColorBtn_Click(object sender, EventArgs e) => OnPickDesiredColorBtnClick(blueDesiredColorTxt);
+
+        private void OnPickDesiredColorBtnClick(TextBox desiredColorTxt) {
             Hide();
-            new ColorPickOverlay(
-                this,
-                c => darkThemeDesiredColorTextBox.Text = c.ToHex()
-            ).Show();
+            new ColorPickOverlay(this, c => desiredColorTxt.Text = c.ToHex()).Show();
         }
 
-        private void PickLightThemeDesiredColorBtn_Click(object sender, EventArgs e) {
-            Hide();
-            new ColorPickOverlay(
-                this,
-                c => lightThemeDesiredColorTextBox.Text = c.ToHex()
-            ).Show();
-        }
-
-        private void PickBlueThemeDesiredColorBtn_Click(object sender, EventArgs e) {
-            Hide();
-            new ColorPickOverlay(
-                this,
-                c => blueThemeDesiredColorTextBox.Text = c.ToHex()
-            ).Show();
-        }
-
-        private void CopyToClipboardButton_Click(object sender, EventArgs e) {
+        private void CopyToClipboardBtn_Click(object sender, EventArgs e) {
             if (bestMatches.Count > 0) {
-                var bestMatch = bestMatches[bestMatchesComboBox.SelectedIndex];
+                var bestMatch = bestMatches[bestMatchesCmb.SelectedIndex];
                 var copyText = bestMatch.Name;
                 Clipboard.SetText(copyText);
             }
         }
 
-        private void darkThemeBestMatchPictureBox_MouseHover(object sender, EventArgs e) =>
-            toolTip
-            .SetToolTip(
-                darkThemeBestMatchPictureBox,
-                darkThemeBestMatchPictureBox.BackColor.ToHex());
+        private void darkBestMatchPic_MouseHover(object sender, EventArgs e) => toolTip
+            .SetToolTip(darkBestMatchPic, darkBestMatchPic.BackColor.ToHex());
 
-        private void lightThemeBestMatchPictureBox_MouseHover(object sender, EventArgs e) =>
-            toolTip
-            .SetToolTip(
-                lightThemeBestMatchPictureBox,
-                lightThemeBestMatchPictureBox.BackColor.ToHex());
+        private void lightBestMatchPic_MouseHover(object sender, EventArgs e) => toolTip
+            .SetToolTip(lightBestMatchPic, lightBestMatchPic.BackColor.ToHex());
 
-        private void blueThemeBestMatchPictureBox_MouseHover(object sender, EventArgs e) =>
-            toolTip
-            .SetToolTip(
-                blueThemeBestMatchPictureBox,
-                blueThemeBestMatchPictureBox.BackColor.ToHex());
+        private void blueBestMatchPic_MouseHover(object sender, EventArgs e) => toolTip
+            .SetToolTip(blueBestMatchPic, blueBestMatchPic.BackColor.ToHex());
     }
 }

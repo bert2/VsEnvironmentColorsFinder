@@ -1,28 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
+﻿namespace EnvironmentColorsFinder {
+    using System.Collections.Generic;
+    using System.Drawing;
+    using System.Linq;
 
-namespace EnvironmentColorsFinder
-{
-    internal class ColorDatabase
-    {
-        private struct Entry
-        {
-            public Entry(string name, Color dark, Color light, Color blue)
-            {
-                this.Name = name;
-                this.Dark = dark;
-                this.Light = light;
-                this.Blue = blue;
+    public class ColorDatabase {
+        private struct Entry {
+            public Entry(string name, Color dark, Color light, Color blue) {
+                Name = name;
+                Dark = dark;
+                Light = light;
+                Blue = blue;
             }
 
-            public uint CalculateMaxColorDiff(Color? dark, Color? light, Color? blue)
-            {
+            public uint CalculateMaxColorDiff(Color? dark, Color? light, Color? blue) {
                 var diffs = new List<uint>();
-                if (dark != null) diffs.Add(ColorHelpers.CalculateColorDiff(dark.Value, this.Dark));
-                if (light != null) diffs.Add(ColorHelpers.CalculateColorDiff(light.Value, this.Light));
-                if (blue != null) diffs.Add(ColorHelpers.CalculateColorDiff(blue.Value, this.Blue));
+                if (dark != null) diffs.Add(ColorHelpers.CalculateColorDiff(dark.Value, Dark));
+                if (light != null) diffs.Add(ColorHelpers.CalculateColorDiff(light.Value, Light));
+                if (blue != null) diffs.Add(ColorHelpers.CalculateColorDiff(blue.Value, Blue));
                 return diffs.Any() ? diffs.Max() : 0;
             }
 
@@ -33,7 +27,7 @@ namespace EnvironmentColorsFinder
         }
 
         public List<ColorMatch> CalculateBestMatches(Color? dark, Color? light, Color? blue) =>
-            (from entry in this.entries
+            (from entry in entries
              let entryDiff = entry.CalculateMaxColorDiff(dark, light, blue)
              orderby entryDiff
              select new ColorMatch(entry.Name, entry.Dark, entry.Light, entry.Blue, entryDiff))

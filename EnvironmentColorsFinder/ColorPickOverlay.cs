@@ -6,12 +6,12 @@
 
     public partial class ColorPickOverlay : Form {
         private readonly MainForm mainForm;
-        private readonly Action<Color> handlePickedColor;
+        private readonly Action<Color> handlePicked;
 
-        public ColorPickOverlay(MainForm owner, Action<Color> handlePickedColor) {
+        public ColorPickOverlay(MainForm owner, Action<Color> handlePicked) {
             InitializeComponent();
             mainForm = owner;
-            this.handlePickedColor = handlePickedColor;
+            this.handlePicked = handlePicked;
         }
 
         private void ColorPickOverlay_Click(object sender, EventArgs e) {
@@ -25,7 +25,7 @@
             gfx.CopyFromScreen(click.Location, new Point(0, 0), new Size(1, 1));
 
             mainForm.Show();
-            handlePickedColor(bitmap.GetPixel(0, 0));
+            handlePicked(bitmap.GetPixel(0, 0));
 
             Close();
         }

@@ -49,7 +49,7 @@
                         .AppendLine())
                 .ToString();
 
-            Clipboard.SetDataObject(text, copy: true);
+            Clipboard.SetText(text);
 
             _ = VsShellUtilities.ShowMessageBox(
                 pkg,

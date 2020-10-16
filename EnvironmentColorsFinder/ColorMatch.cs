@@ -1,19 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
+﻿namespace EnvironmentColorsFinder {
+    using System.Drawing;
 
-namespace EnvironmentColorsFinder
-{
-    public struct ColorMatch
-    {
-        public ColorMatch(string name, Color dark, Color light, Color blue, uint diff)
-        {
-            this.Name = name;
-            this.Dark = dark;
-            this.Light = light;
-            this.Blue = blue;
-            this.Diff = diff;
+    public struct ColorMatch {
+        public ColorMatch(string name, Color dark, Color light, Color blue, uint diff) {
+            Name = name;
+            Dark = dark;
+            Light = light;
+            Blue = blue;
+            Diff = diff;
         }
 
         public string Name;
