@@ -31,7 +31,11 @@
             typeof(VisualStudioInstallerColors)
         }
         .SelectMany(
-            t => t.GetProperties().Where(p => p.PropertyType == typeof(ThemeResourceKey)),
+            t => t
+                .GetProperties()
+                .Where(p
+                    => p.PropertyType == typeof(ThemeResourceKey)
+                    && p.Name.EndsWith("ColorKey")),
             Entry.Create)
         .ToArray();
 

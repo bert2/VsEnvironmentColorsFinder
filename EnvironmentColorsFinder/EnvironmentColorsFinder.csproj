@@ -46,8 +46,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ColorDatabase.cs" />
-    <Compile Include="ColorHelpers.cs" />
+    <Compile Include="ColorDb.cs" />
+    <Compile Include="ColorDbEntry.cs" />
+    <Compile Include="ColorDiff.cs" />
+    <Compile Include="ColorStrings.cs" />
     <Compile Include="ColorMatch.cs" />
     <Compile Include="ColorPickOverlayForm.cs">
       <SubType>Form</SubType>

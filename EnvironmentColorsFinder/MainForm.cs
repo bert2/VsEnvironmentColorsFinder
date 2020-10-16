@@ -7,7 +7,6 @@
     public partial class MainForm : Form {
         private const int MinNumMatchesToList = 30;
         private readonly ToolTip toolTip = new ToolTip();
-        private readonly ColorDatabase colorDatabase = new ColorDatabase();
         private List<ColorMatch> bestMatches;
 
         public MainForm() {
@@ -38,9 +37,9 @@
 
         private void RefreshEverything() {
             // Get the colors from the RGB hex strings that the user has entered.
-            var desiredDarkColor = ColorHelpers.ParseColor(darkDesiredColorTxt.Text);
-            var desiredLightColor = ColorHelpers.ParseColor(lightDesiredColorTxt.Text);
-            var desiredBlueColor = ColorHelpers.ParseColor(blueDesiredColorTxt.Text);
+            var desiredDarkColor = darkDesiredColorTxt.Text.ToColor();
+            var desiredLightColor = lightDesiredColorTxt.Text.ToColor();
+            var desiredBlueColor = blueDesiredColorTxt.Text.ToColor();
 
             // Show the selected colors under the textboxes,
             // or black if the theme is not selected for inclusion.
@@ -49,7 +48,7 @@
             blueDesiredColorPic.BackColor = desiredBlueColor ?? Color.Black;
 
             // Calculate the best matches for the user-entered color hex strings.
-            bestMatches = colorDatabase.CalculateBestMatches(
+            bestMatches = ColorDb.Entries.CalculateBestMatches(
                 darkDesiredColorChk.Checked ? desiredDarkColor : null,
                 lightDesiredColorChk.Checked ? desiredLightColor : null,
                 blueDesiredColorChk.Checked ? desiredBlueColor : null);
