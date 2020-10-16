@@ -5,7 +5,7 @@
     using System.Windows.Forms;
 
     public partial class MainForm : Form {
-        private const int MinNumMatchesToList = 20;
+        private const int MinNumMatchesToList = 30;
         private readonly ToolTip toolTip = new ToolTip();
         private readonly ColorDatabase colorDatabase = new ColorDatabase();
         private List<ColorMatch> bestMatches;
