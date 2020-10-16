@@ -37,17 +37,10 @@
         private void MainForm_Load(object sender, EventArgs e) => RefreshEverything();
 
         private void RefreshEverything() {
-            Color? desiredDarkColor = null;
-            Color? desiredLightColor = null;
-            Color? desiredBlueColor = null;
-
             // Get the colors from the RGB hex strings that the user has entered.
-            if (darkDesiredColorChk.Checked)
-                desiredDarkColor = ColorHelpers.ParseColor(darkDesiredColorTxt.Text);
-            if (lightDesiredColorChk.Checked)
-                desiredLightColor = ColorHelpers.ParseColor(lightDesiredColorTxt.Text);
-            if (blueDesiredColorChk.Checked)
-                desiredBlueColor = ColorHelpers.ParseColor(blueDesiredColorTxt.Text);
+            var desiredDarkColor = ColorHelpers.ParseColor(darkDesiredColorTxt.Text);
+            var desiredLightColor = ColorHelpers.ParseColor(lightDesiredColorTxt.Text);
+            var desiredBlueColor = ColorHelpers.ParseColor(blueDesiredColorTxt.Text);
 
             // Show the selected colors under the textboxes,
             // or black if the theme is not selected for inclusion.
@@ -56,7 +49,10 @@
             blueDesiredColorPic.BackColor = desiredBlueColor ?? Color.Black;
 
             // Calculate the best matches for the user-entered color hex strings.
-            bestMatches = colorDatabase.CalculateBestMatches(desiredDarkColor, desiredLightColor, desiredBlueColor);
+            bestMatches = colorDatabase.CalculateBestMatches(
+                darkDesiredColorChk.Checked ? desiredDarkColor : null,
+                lightDesiredColorChk.Checked ? desiredLightColor : null,
+                blueDesiredColorChk.Checked ? desiredBlueColor : null);
 
             // Populate the dropdown with the best matches.
             bestMatchesCmb.Items.Clear();
