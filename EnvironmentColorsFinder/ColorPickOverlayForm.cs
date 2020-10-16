@@ -4,11 +4,11 @@
     using System.Drawing.Imaging;
     using System.Windows.Forms;
 
-    public partial class ColorPickOverlayFrm : Form {
+    public partial class ColorPickOverlayForm : Form {
         private readonly Form owner;
         private readonly Action<Color> handlePicked;
 
-        public ColorPickOverlayFrm(Form owner, Action<Color> handlePicked) {
+        public ColorPickOverlayForm(Form owner, Action<Color> handlePicked) {
             InitializeComponent();
             this.owner = owner;
             this.handlePicked = handlePicked;

@@ -121,7 +121,7 @@
 
         private void OnPickDesiredColorBtnClick(TextBox desiredColorTxt) {
             Hide();
-            new ColorPickOverlayFrm(this, c => desiredColorTxt.Text = c.ToHex()).Show();
+            new ColorPickOverlayForm(this, c => desiredColorTxt.Text = c.ToHex()).Show();
         }
 
         private void CopyToClipboardBtn_Click(object sender, EventArgs e) {
