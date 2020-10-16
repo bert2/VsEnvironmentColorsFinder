@@ -7,6 +7,7 @@
     using System.Text;
     using System.Threading;
 
+    using Microsoft.VisualStudio.PlatformUI;
     using Microsoft.VisualStudio.Shell;
 
     using Task = System.Threading.Tasks.Task;
@@ -16,18 +17,18 @@
     [ProvideMenuResource("Menus.ctmenu", 1)]
     public sealed class ColorDatabaseGeneratorPackage : AsyncPackage {
         public static readonly Entry[] DB = new[] {
-            typeof(Microsoft.VisualStudio.PlatformUI.CommonControlsColors),
-            typeof(Microsoft.VisualStudio.PlatformUI.CommonDocumentColors),
-            typeof(Microsoft.VisualStudio.PlatformUI.EnvironmentColors),
-            typeof(Microsoft.VisualStudio.PlatformUI.HeaderColors),
-            typeof(Microsoft.VisualStudio.PlatformUI.InfoBarColors),
-            typeof(Microsoft.VisualStudio.PlatformUI.ProgressBarColors),
-            typeof(Microsoft.VisualStudio.PlatformUI.SearchControlColors),
-            typeof(Microsoft.VisualStudio.PlatformUI.StartPageColors),
-            typeof(Microsoft.VisualStudio.PlatformUI.ThemedDialogColors),
-            typeof(Microsoft.VisualStudio.PlatformUI.TreeViewColors),
-            typeof(Microsoft.VisualStudio.PlatformUI.UnthemedDialogColors),
-            typeof(Microsoft.VisualStudio.PlatformUI.VisualStudioInstallerColors)
+            typeof(CommonControlsColors),
+            typeof(CommonDocumentColors),
+            typeof(EnvironmentColors),
+            typeof(HeaderColors),
+            typeof(InfoBarColors),
+            typeof(ProgressBarColors),
+            typeof(SearchControlColors),
+            typeof(StartPageColors),
+            typeof(ThemedDialogColors),
+            typeof(TreeViewColors),
+            typeof(UnthemedDialogColors),
+            typeof(VisualStudioInstallerColors)
         }
         .SelectMany(
             t => t.GetProperties().Where(p => p.PropertyType == typeof(ThemeResourceKey)),
