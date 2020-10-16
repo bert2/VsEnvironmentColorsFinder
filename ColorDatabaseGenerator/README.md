@@ -1,6 +1,6 @@
 ﻿# ColorDatabaseGenerator
 
-This is a Visual Studio extension used to generate the data needed for the [`ColorDatabase`](../EnvironmentColorsFinder/ColorDatabase.cs).
+This is a Visual Studio extension used to generate the data needed for the [`ColorDatabase`](../EnvironmentColorsFinder/ColorDb.cs).
 
 ## Prerequisites
 
@@ -19,4 +19,4 @@ This is a Visual Studio extension used to generate the data needed for the [`Col
 5. Click the respective `Grab ...` entry.
 6. Repeat step 4 and 5 for the last theme.
 7. Click `Copy Theme Colors to Clipboard`.
-8. Your clipboard will now contain the entries that can be pasted into the [`ColorDatabase`](../EnvironmentColorsFinder/ColorDatabase.cs).
+8. Your clipboard will now contain the entries that can be pasted into the [`ColorDatabase`](../EnvironmentColorsFinder/ColorDb.cs).
