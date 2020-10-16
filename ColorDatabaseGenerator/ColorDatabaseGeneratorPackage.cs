@@ -63,6 +63,6 @@
             .Append(Hex(this[Theme.Blue])).Append(" (b), ")
             .Append(Hex(this[Theme.Light])).Append(" (l)")
             .ToString();
-        private static string Hex(Color c) => c.Name == "0" ? "n/a" : c.Name.Substring(2);
+        private static string Hex(Color c) => c.R.ToString("X2") + c.G.ToString("X2") + c.B.ToString("X2");
     }
 }

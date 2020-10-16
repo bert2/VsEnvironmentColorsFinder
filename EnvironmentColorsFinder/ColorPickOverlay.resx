@@ -117,27 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="label1.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <metadata name="label3.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <metadata name="label2.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="pickDarkThemeDesiredColorBtn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAANZJREFUOE+dkr0NgzAQhT1KRsgM7hmAnt4rpGIKJEq6UHgQsgUlicRP6eShO+sc
-        LAw86UmWfd/z+Ued0bIst2maHjDGNL2vcRzv7Hmeh6ZpHNz3/ZAMYYhdlqXTWq9GCDqh0q0YBsRm+HSA
-        BGHMYW33CKL9YHeGsU6lW8ndi6IA4EOSARJun63rulcQshvwD7+HjwzwrxGFcSEx2BizvjkgNiGhfk9S
-        W2vXc3LrEqayuGh3l+e5v220fQiGZPtZlrmqqo7DLBTTJeGH1cl/HhOgS+B1KfUFk9ZvPAh5BpsAAAAA
-        SUVORK5CYII=
-</value>
-  </data>
-  <metadata name="colorDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
 </root>
