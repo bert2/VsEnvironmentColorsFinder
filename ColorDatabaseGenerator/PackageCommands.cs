@@ -25,8 +25,8 @@ namespace ColorDatabaseGenerator
     {
         public const int MyMenuGroup = 0x1020;
         public const int GrabDarkThemeColorsCommandId = 0x0100;
-        public const int GrabBlueThemeColorsCommandId = 0x0200;
-        public const int GrabLightThemeColorsCommandId = 0x0300;
+        public const int GrabLightThemeColorsCommandId = 0x0200;
+        public const int GrabBlueThemeColorsCommandId = 0x0300;
         public const int CopyThemeColorsToClipboardCommandId = 0x0400;
     }
 }

@@ -37,8 +37,8 @@
         protected override async Task InitializeAsync(CancellationToken ct, IProgress<ServiceProgressData> progress) {
             await JoinableTaskFactory.SwitchToMainThreadAsync(ct);
             await GrabDarkThemeColorsCommand.InitializeAsync(this);
-            await GrabBlueThemeColorsCommand.InitializeAsync(this);
             await GrabLightThemeColorsCommand.InitializeAsync(this);
+            await GrabBlueThemeColorsCommand.InitializeAsync(this);
             await CopyThemeColorsToClipboardCommand.InitializeAsync(this);
         }
     }

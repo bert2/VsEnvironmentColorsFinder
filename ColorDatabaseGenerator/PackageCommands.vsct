@@ -18,17 +18,17 @@
         </Strings>
       </Button>
 
-      <Button guid="CmdSetId" id="GrabBlueThemeColorsCommandId" priority="0x0200" type="Button">
-        <Parent guid="CmdSetId" id="MyMenuGroup" />
-        <Strings>
-          <ButtonText>Grab Blue Theme Colors</ButtonText>
-        </Strings>
-      </Button>
-
-      <Button guid="CmdSetId" id="GrabLightThemeColorsCommandId" priority="0x0300" type="Button">
+      <Button guid="CmdSetId" id="GrabLightThemeColorsCommandId" priority="0x0200" type="Button">
         <Parent guid="CmdSetId" id="MyMenuGroup" />
         <Strings>
           <ButtonText>Grab Light Theme Colors</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="CmdSetId" id="GrabBlueThemeColorsCommandId" priority="0x0300" type="Button">
+        <Parent guid="CmdSetId" id="MyMenuGroup" />
+        <Strings>
+          <ButtonText>Grab Blue Theme Colors</ButtonText>
         </Strings>
       </Button>
 
@@ -47,8 +47,8 @@
     <GuidSymbol name="CmdSetId" value="{df53d37b-40f2-4d21-be65-3c00efe5eb0f}">
       <IDSymbol name="MyMenuGroup" value="0x1020" />
       <IDSymbol name="GrabDarkThemeColorsCommandId" value="0x0100" />
-      <IDSymbol name="GrabBlueThemeColorsCommandId" value="0x0200" />
-      <IDSymbol name="GrabLightThemeColorsCommandId" value="0x0300" />
+      <IDSymbol name="GrabLightThemeColorsCommandId" value="0x0200" />
+      <IDSymbol name="GrabBlueThemeColorsCommandId" value="0x0300" />
       <IDSymbol name="CopyThemeColorsToClipboardCommandId" value="0x0400" />
     </GuidSymbol>
   </Symbols>
