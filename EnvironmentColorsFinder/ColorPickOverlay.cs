@@ -29,5 +29,15 @@
 
             Close();
         }
+
+        protected override bool ProcessDialogKey(Keys keyData) {
+            if (keyData == Keys.Escape && ModifierKeys == Keys.None) {
+                mainForm.Show();
+                Close();
+                return true;
+            }
+
+            return base.ProcessDialogKey(keyData);
+        }
     }
 }

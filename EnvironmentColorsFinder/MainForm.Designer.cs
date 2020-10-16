@@ -31,7 +31,6 @@
             System.Windows.Forms.Label label1;
             System.Windows.Forms.Label label2;
             System.Windows.Forms.Label label3;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.darkThemeDesiredColorTextBox = new System.Windows.Forms.TextBox();
             this.lightThemeDesiredColorTextBox = new System.Windows.Forms.TextBox();
             this.darkThemeDesiredColorPictureBox = new System.Windows.Forms.PictureBox();
@@ -49,6 +48,8 @@
             this.copyToClipboardButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.pickDarkThemeDesiredColorBtn = new System.Windows.Forms.Button();
+            this.pickLightThemeDesiredColorBtn = new System.Windows.Forms.Button();
+            this.pickBlueThemeDesiredColorBtn = new System.Windows.Forms.Button();
             label1 = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
             label3 = new System.Windows.Forms.Label();
@@ -69,7 +70,7 @@
             label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label1.Location = new System.Drawing.Point(3, 0);
             label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(185, 20);
+            label1.Size = new System.Drawing.Size(179, 20);
             label1.TabIndex = 0;
             label1.Text = "Dark theme";
             label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -80,9 +81,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.SetColumnSpan(label2, 2);
             label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label2.Location = new System.Drawing.Point(214, 0);
+            label2.Location = new System.Drawing.Point(208, 0);
             label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(175, 20);
+            label2.Size = new System.Drawing.Size(179, 20);
             label2.TabIndex = 1;
             label2.Text = "Light theme";
             label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -93,9 +94,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.SetColumnSpan(label3, 2);
             label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label3.Location = new System.Drawing.Point(415, 0);
+            label3.Location = new System.Drawing.Point(413, 0);
             label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(177, 20);
+            label3.Size = new System.Drawing.Size(179, 20);
             label3.TabIndex = 11;
             label3.Text = "Blue theme";
             label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -107,7 +108,7 @@
             this.darkThemeDesiredColorTextBox.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.darkThemeDesiredColorTextBox.Location = new System.Drawing.Point(33, 33);
             this.darkThemeDesiredColorTextBox.Name = "darkThemeDesiredColorTextBox";
-            this.darkThemeDesiredColorTextBox.Size = new System.Drawing.Size(155, 20);
+            this.darkThemeDesiredColorTextBox.Size = new System.Drawing.Size(149, 20);
             this.darkThemeDesiredColorTextBox.TabIndex = 2;
             this.darkThemeDesiredColorTextBox.Text = "717171";
             this.darkThemeDesiredColorTextBox.TextChanged += new System.EventHandler(this.DarkThemeDesiredColorTextBox_TextChanged);
@@ -117,9 +118,9 @@
             this.lightThemeDesiredColorTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lightThemeDesiredColorTextBox.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lightThemeDesiredColorTextBox.Location = new System.Drawing.Point(234, 33);
+            this.lightThemeDesiredColorTextBox.Location = new System.Drawing.Point(238, 33);
             this.lightThemeDesiredColorTextBox.Name = "lightThemeDesiredColorTextBox";
-            this.lightThemeDesiredColorTextBox.Size = new System.Drawing.Size(155, 20);
+            this.lightThemeDesiredColorTextBox.Size = new System.Drawing.Size(149, 20);
             this.lightThemeDesiredColorTextBox.TabIndex = 4;
             this.lightThemeDesiredColorTextBox.Text = "c9def5";
             this.lightThemeDesiredColorTextBox.TextChanged += new System.EventHandler(this.LightThemeDesiredColorTextBox_TextChanged);
@@ -131,7 +132,7 @@
             this.darkThemeDesiredColorPictureBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.darkThemeDesiredColorPictureBox.Location = new System.Drawing.Point(33, 63);
             this.darkThemeDesiredColorPictureBox.Name = "darkThemeDesiredColorPictureBox";
-            this.darkThemeDesiredColorPictureBox.Size = new System.Drawing.Size(155, 24);
+            this.darkThemeDesiredColorPictureBox.Size = new System.Drawing.Size(149, 24);
             this.darkThemeDesiredColorPictureBox.TabIndex = 5;
             this.darkThemeDesiredColorPictureBox.TabStop = false;
             this.darkThemeDesiredColorPictureBox.Click += new System.EventHandler(this.DarkThemeDesiredColorPictureBox_Click);
@@ -141,9 +142,9 @@
             this.lightThemeDesiredColorPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lightThemeDesiredColorPictureBox.BackColor = System.Drawing.Color.Blue;
-            this.lightThemeDesiredColorPictureBox.Location = new System.Drawing.Point(234, 63);
+            this.lightThemeDesiredColorPictureBox.Location = new System.Drawing.Point(238, 63);
             this.lightThemeDesiredColorPictureBox.Name = "lightThemeDesiredColorPictureBox";
-            this.lightThemeDesiredColorPictureBox.Size = new System.Drawing.Size(155, 24);
+            this.lightThemeDesiredColorPictureBox.Size = new System.Drawing.Size(149, 24);
             this.lightThemeDesiredColorPictureBox.TabIndex = 6;
             this.lightThemeDesiredColorPictureBox.TabStop = false;
             this.lightThemeDesiredColorPictureBox.Click += new System.EventHandler(this.LightThemeDesiredColorPictureBox_Click);
@@ -156,7 +157,7 @@
             this.tableLayoutPanel1.SetColumnSpan(this.darkThemeBestMatchPictureBox, 2);
             this.darkThemeBestMatchPictureBox.Location = new System.Drawing.Point(3, 145);
             this.darkThemeBestMatchPictureBox.Name = "darkThemeBestMatchPictureBox";
-            this.darkThemeBestMatchPictureBox.Size = new System.Drawing.Size(185, 24);
+            this.darkThemeBestMatchPictureBox.Size = new System.Drawing.Size(179, 24);
             this.darkThemeBestMatchPictureBox.TabIndex = 7;
             this.darkThemeBestMatchPictureBox.TabStop = false;
             this.darkThemeBestMatchPictureBox.MouseHover += new System.EventHandler(this.darkThemeBestMatchPictureBox_MouseHover);
@@ -167,9 +168,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lightThemeBestMatchPictureBox.BackColor = System.Drawing.Color.Blue;
             this.tableLayoutPanel1.SetColumnSpan(this.lightThemeBestMatchPictureBox, 2);
-            this.lightThemeBestMatchPictureBox.Location = new System.Drawing.Point(214, 145);
+            this.lightThemeBestMatchPictureBox.Location = new System.Drawing.Point(208, 145);
             this.lightThemeBestMatchPictureBox.Name = "lightThemeBestMatchPictureBox";
-            this.lightThemeBestMatchPictureBox.Size = new System.Drawing.Size(175, 24);
+            this.lightThemeBestMatchPictureBox.Size = new System.Drawing.Size(179, 24);
             this.lightThemeBestMatchPictureBox.TabIndex = 8;
             this.lightThemeBestMatchPictureBox.TabStop = false;
             this.lightThemeBestMatchPictureBox.MouseHover += new System.EventHandler(this.lightThemeBestMatchPictureBox_MouseHover);
@@ -182,9 +183,9 @@
             this.bestMatchesComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.bestMatchesComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bestMatchesComboBox.FormattingEnabled = true;
-            this.bestMatchesComboBox.Location = new System.Drawing.Point(3, 115);
+            this.bestMatchesComboBox.Location = new System.Drawing.Point(3, 114);
             this.bestMatchesComboBox.Name = "bestMatchesComboBox";
-            this.bestMatchesComboBox.Size = new System.Drawing.Size(426, 24);
+            this.bestMatchesComboBox.Size = new System.Drawing.Size(434, 24);
             this.bestMatchesComboBox.TabIndex = 7;
             this.bestMatchesComboBox.SelectedIndexChanged += new System.EventHandler(this.bestMatchesComboBox_SelectedIndexChanged);
             // 
@@ -194,9 +195,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.blueThemeBestMatchPictureBox.BackColor = System.Drawing.Color.Blue;
             this.tableLayoutPanel1.SetColumnSpan(this.blueThemeBestMatchPictureBox, 2);
-            this.blueThemeBestMatchPictureBox.Location = new System.Drawing.Point(415, 145);
+            this.blueThemeBestMatchPictureBox.Location = new System.Drawing.Point(413, 145);
             this.blueThemeBestMatchPictureBox.Name = "blueThemeBestMatchPictureBox";
-            this.blueThemeBestMatchPictureBox.Size = new System.Drawing.Size(177, 24);
+            this.blueThemeBestMatchPictureBox.Size = new System.Drawing.Size(179, 24);
             this.blueThemeBestMatchPictureBox.TabIndex = 14;
             this.blueThemeBestMatchPictureBox.TabStop = false;
             this.blueThemeBestMatchPictureBox.MouseHover += new System.EventHandler(this.blueThemeBestMatchPictureBox_MouseHover);
@@ -206,9 +207,9 @@
             this.blueThemeDesiredColorPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.blueThemeDesiredColorPictureBox.BackColor = System.Drawing.Color.Blue;
-            this.blueThemeDesiredColorPictureBox.Location = new System.Drawing.Point(435, 63);
+            this.blueThemeDesiredColorPictureBox.Location = new System.Drawing.Point(443, 63);
             this.blueThemeDesiredColorPictureBox.Name = "blueThemeDesiredColorPictureBox";
-            this.blueThemeDesiredColorPictureBox.Size = new System.Drawing.Size(157, 24);
+            this.blueThemeDesiredColorPictureBox.Size = new System.Drawing.Size(149, 24);
             this.blueThemeDesiredColorPictureBox.TabIndex = 13;
             this.blueThemeDesiredColorPictureBox.TabStop = false;
             this.blueThemeDesiredColorPictureBox.Click += new System.EventHandler(this.BlueThemeDesiredColorPictureBox_Click);
@@ -218,48 +219,51 @@
             this.blueThemeDesiredColorTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.blueThemeDesiredColorTextBox.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.blueThemeDesiredColorTextBox.Location = new System.Drawing.Point(435, 33);
+            this.blueThemeDesiredColorTextBox.Location = new System.Drawing.Point(443, 33);
             this.blueThemeDesiredColorTextBox.Name = "blueThemeDesiredColorTextBox";
-            this.blueThemeDesiredColorTextBox.Size = new System.Drawing.Size(157, 20);
+            this.blueThemeDesiredColorTextBox.Size = new System.Drawing.Size(149, 20);
             this.blueThemeDesiredColorTextBox.TabIndex = 6;
             this.blueThemeDesiredColorTextBox.Text = "fff0d0";
             this.blueThemeDesiredColorTextBox.TextChanged += new System.EventHandler(this.BlueThemeDesiredColorTextBox_TextChanged);
             // 
             // darkThemeDesiredColorCheckBox
             // 
-            this.darkThemeDesiredColorCheckBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.darkThemeDesiredColorCheckBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.darkThemeDesiredColorCheckBox.AutoSize = true;
             this.darkThemeDesiredColorCheckBox.Checked = true;
             this.darkThemeDesiredColorCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.darkThemeDesiredColorCheckBox.Location = new System.Drawing.Point(3, 38);
+            this.darkThemeDesiredColorCheckBox.Location = new System.Drawing.Point(6, 38);
             this.darkThemeDesiredColorCheckBox.Name = "darkThemeDesiredColorCheckBox";
-            this.darkThemeDesiredColorCheckBox.Size = new System.Drawing.Size(15, 14);
+            this.darkThemeDesiredColorCheckBox.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.darkThemeDesiredColorCheckBox.Size = new System.Drawing.Size(18, 14);
             this.darkThemeDesiredColorCheckBox.TabIndex = 1;
             this.darkThemeDesiredColorCheckBox.UseVisualStyleBackColor = true;
             this.darkThemeDesiredColorCheckBox.CheckedChanged += new System.EventHandler(this.DarkThemeDesiredColorCheckBox_CheckedChanged);
             // 
             // lightThemeDesiredColorCheckBox
             // 
-            this.lightThemeDesiredColorCheckBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lightThemeDesiredColorCheckBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lightThemeDesiredColorCheckBox.AutoSize = true;
             this.lightThemeDesiredColorCheckBox.Checked = true;
             this.lightThemeDesiredColorCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.lightThemeDesiredColorCheckBox.Location = new System.Drawing.Point(214, 38);
+            this.lightThemeDesiredColorCheckBox.Location = new System.Drawing.Point(211, 38);
             this.lightThemeDesiredColorCheckBox.Name = "lightThemeDesiredColorCheckBox";
-            this.lightThemeDesiredColorCheckBox.Size = new System.Drawing.Size(14, 14);
+            this.lightThemeDesiredColorCheckBox.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.lightThemeDesiredColorCheckBox.Size = new System.Drawing.Size(18, 14);
             this.lightThemeDesiredColorCheckBox.TabIndex = 3;
             this.lightThemeDesiredColorCheckBox.UseVisualStyleBackColor = true;
             this.lightThemeDesiredColorCheckBox.CheckedChanged += new System.EventHandler(this.LightThemeDesiredColorCheckBox_CheckedChanged);
             // 
             // blueThemeDesiredColorCheckBox
             // 
-            this.blueThemeDesiredColorCheckBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.blueThemeDesiredColorCheckBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.blueThemeDesiredColorCheckBox.AutoSize = true;
             this.blueThemeDesiredColorCheckBox.Checked = true;
             this.blueThemeDesiredColorCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.blueThemeDesiredColorCheckBox.Location = new System.Drawing.Point(415, 38);
+            this.blueThemeDesiredColorCheckBox.Location = new System.Drawing.Point(416, 38);
             this.blueThemeDesiredColorCheckBox.Name = "blueThemeDesiredColorCheckBox";
-            this.blueThemeDesiredColorCheckBox.Size = new System.Drawing.Size(14, 14);
+            this.blueThemeDesiredColorCheckBox.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.blueThemeDesiredColorCheckBox.Size = new System.Drawing.Size(18, 14);
             this.blueThemeDesiredColorCheckBox.TabIndex = 5;
             this.blueThemeDesiredColorCheckBox.UseVisualStyleBackColor = true;
             this.blueThemeDesiredColorCheckBox.CheckedChanged += new System.EventHandler(this.BlueThemeDesiredColorCheckBox_CheckedChanged);
@@ -273,9 +277,9 @@
             this.copyToClipboardButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.copyToClipboardButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.copyToClipboardButton.Location = new System.Drawing.Point(435, 113);
+            this.copyToClipboardButton.Location = new System.Drawing.Point(443, 113);
             this.copyToClipboardButton.Name = "copyToClipboardButton";
-            this.copyToClipboardButton.Size = new System.Drawing.Size(157, 26);
+            this.copyToClipboardButton.Size = new System.Drawing.Size(149, 26);
             this.copyToClipboardButton.TabIndex = 8;
             this.copyToClipboardButton.Text = "📋 Copy";
             this.copyToClipboardButton.UseVisualStyleBackColor = true;
@@ -287,10 +291,10 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.Controls.Add(this.darkThemeDesiredColorCheckBox, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.darkThemeDesiredColorTextBox, 1, 1);
@@ -310,6 +314,8 @@
             this.tableLayoutPanel1.Controls.Add(this.blueThemeDesiredColorPictureBox, 7, 2);
             this.tableLayoutPanel1.Controls.Add(this.lightThemeDesiredColorPictureBox, 4, 2);
             this.tableLayoutPanel1.Controls.Add(this.pickDarkThemeDesiredColorBtn, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.pickLightThemeDesiredColorBtn, 3, 2);
+            this.tableLayoutPanel1.Controls.Add(this.pickBlueThemeDesiredColorBtn, 6, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -326,13 +332,35 @@
             // pickDarkThemeDesiredColorBtn
             // 
             this.pickDarkThemeDesiredColorBtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pickDarkThemeDesiredColorBtn.Image = ((System.Drawing.Image)(resources.GetObject("pickDarkThemeDesiredColorBtn.Image")));
+            this.pickDarkThemeDesiredColorBtn.Image = global::EnvironmentColorsFinder.Properties.Resources.ColorPicker_12x_16x;
             this.pickDarkThemeDesiredColorBtn.Location = new System.Drawing.Point(3, 63);
             this.pickDarkThemeDesiredColorBtn.Name = "pickDarkThemeDesiredColorBtn";
             this.pickDarkThemeDesiredColorBtn.Size = new System.Drawing.Size(24, 24);
             this.pickDarkThemeDesiredColorBtn.TabIndex = 15;
             this.pickDarkThemeDesiredColorBtn.UseVisualStyleBackColor = true;
             this.pickDarkThemeDesiredColorBtn.Click += new System.EventHandler(this.PickDarkThemeDesiredColorBtn_Click);
+            // 
+            // pickLightThemeDesiredColorBtn
+            // 
+            this.pickLightThemeDesiredColorBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pickLightThemeDesiredColorBtn.Image = global::EnvironmentColorsFinder.Properties.Resources.ColorPicker_12x_16x;
+            this.pickLightThemeDesiredColorBtn.Location = new System.Drawing.Point(208, 63);
+            this.pickLightThemeDesiredColorBtn.Name = "pickLightThemeDesiredColorBtn";
+            this.pickLightThemeDesiredColorBtn.Size = new System.Drawing.Size(24, 24);
+            this.pickLightThemeDesiredColorBtn.TabIndex = 16;
+            this.pickLightThemeDesiredColorBtn.UseVisualStyleBackColor = true;
+            this.pickLightThemeDesiredColorBtn.Click += new System.EventHandler(this.PickLightThemeDesiredColorBtn_Click);
+            // 
+            // pickBlueThemeDesiredColorBtn
+            // 
+            this.pickBlueThemeDesiredColorBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pickBlueThemeDesiredColorBtn.Image = global::EnvironmentColorsFinder.Properties.Resources.ColorPicker_12x_16x;
+            this.pickBlueThemeDesiredColorBtn.Location = new System.Drawing.Point(413, 63);
+            this.pickBlueThemeDesiredColorBtn.Name = "pickBlueThemeDesiredColorBtn";
+            this.pickBlueThemeDesiredColorBtn.Size = new System.Drawing.Size(24, 24);
+            this.pickBlueThemeDesiredColorBtn.TabIndex = 17;
+            this.pickBlueThemeDesiredColorBtn.UseVisualStyleBackColor = true;
+            this.pickBlueThemeDesiredColorBtn.Click += new System.EventHandler(this.PickBlueThemeDesiredColorBtn_Click);
             // 
             // MainForm
             // 
@@ -375,6 +403,8 @@
         private System.Windows.Forms.Button copyToClipboardButton;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Button pickDarkThemeDesiredColorBtn;
+        private System.Windows.Forms.Button pickLightThemeDesiredColorBtn;
+        private System.Windows.Forms.Button pickBlueThemeDesiredColorBtn;
     }
 }
 

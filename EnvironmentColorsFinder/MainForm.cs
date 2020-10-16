@@ -6,10 +6,16 @@
 
     public partial class MainForm : Form {
         private const int MinNumMatchesToList = 20;
+        private readonly ToolTip toolTip = new ToolTip();
         private readonly ColorDatabase colorDatabase = new ColorDatabase();
         private List<ColorMatch> bestMatches;
 
-        public MainForm() => InitializeComponent();
+        public MainForm() {
+            InitializeComponent();
+            toolTip.SetToolTip(pickDarkThemeDesiredColorBtn, "Pick color from screen.");
+            toolTip.SetToolTip(pickLightThemeDesiredColorBtn, "Pick color from screen.");
+            toolTip.SetToolTip(pickBlueThemeDesiredColorBtn, "Pick color from screen.");
+        }
 
         private void MainForm_Load(object sender, EventArgs e) => RefreshEverything();
 
@@ -117,6 +123,22 @@
             ).Show();
         }
 
+        private void PickLightThemeDesiredColorBtn_Click(object sender, EventArgs e) {
+            Hide();
+            new ColorPickOverlay(
+                this,
+                c => lightThemeDesiredColorTextBox.Text = c.ToHex()
+            ).Show();
+        }
+
+        private void PickBlueThemeDesiredColorBtn_Click(object sender, EventArgs e) {
+            Hide();
+            new ColorPickOverlay(
+                this,
+                c => blueThemeDesiredColorTextBox.Text = c.ToHex()
+            ).Show();
+        }
+
         private void CopyToClipboardButton_Click(object sender, EventArgs e) {
             if (bestMatches.Count > 0) {
                 var bestMatch = bestMatches[bestMatchesComboBox.SelectedIndex];
@@ -125,23 +147,20 @@
             }
         }
 
-        private readonly ToolTip darkThemeBestMatchPictureBoxToolTip = new ToolTip();
         private void darkThemeBestMatchPictureBox_MouseHover(object sender, EventArgs e) =>
-            darkThemeBestMatchPictureBoxToolTip
+            toolTip
             .SetToolTip(
                 darkThemeBestMatchPictureBox,
                 darkThemeBestMatchPictureBox.BackColor.ToHex());
 
-        private readonly ToolTip lightThemeBestMatchPictureBoxToolTip = new ToolTip();
         private void lightThemeBestMatchPictureBox_MouseHover(object sender, EventArgs e) =>
-            lightThemeBestMatchPictureBoxToolTip
+            toolTip
             .SetToolTip(
                 lightThemeBestMatchPictureBox,
                 lightThemeBestMatchPictureBox.BackColor.ToHex());
 
-        private readonly ToolTip blueThemeBestMatchPictureBoxToolTip = new ToolTip();
         private void blueThemeBestMatchPictureBox_MouseHover(object sender, EventArgs e) =>
-            blueThemeBestMatchPictureBoxToolTip
+            toolTip
             .SetToolTip(
                 blueThemeBestMatchPictureBox,
                 blueThemeBestMatchPictureBox.BackColor.ToHex());
