@@ -2,6 +2,8 @@
 
 Updated version of the [EnvironmentColors finder](http://niahtextfilter.com/environmentcolorsfinder) ([source code](https://bitbucket.org/grantdavies/vsenvironmentcolorsfinder/src/master)) created by [Grant Davies](https://twitter.com/GrantTheAnt).
 
+![Usage example](usage.gif "Usage example")
+
 # Added features
 
 * Pick a color directly from the screen, so you don't have to do the "take screenshot, open screenshot in Paint, pick color, copy & paste hex code" routine anymore.
