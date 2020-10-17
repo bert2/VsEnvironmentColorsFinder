@@ -19,7 +19,7 @@
             if (dark != null) diffs.Add(dark.Value.Diff(e.Dark));
             if (light != null) diffs.Add(light.Value.Diff(e.Light));
             if (blue != null) diffs.Add(blue.Value.Diff(e.Blue));
-            return diffs.Count > 0 ? diffs.Average() : double.NaN;
+            return diffs.Count > 0 ? diffs.Average() : .0;
         }
 
         public static double Diff(this Color a, Color b) => a.ToRgb().Compare(b.ToRgb(), new Cie1976Comparison());
