@@ -12,6 +12,11 @@ Updated version of the [EnvironmentColors finder](http://niahtextfilter.com/envi
 * Uses [CIE76](https://en.wikipedia.org/wiki/Color_difference#CIE76) to match colors instead of Euclidean distance.
 * Resizable layout, because the property names can get really long.
 
+## Usage
+
+* Just clone this repo and run the project `EnvironmentColorsFinder` with Visual Studio.
+* Visual Studio might complain about the `ColorDatabaseGenerator` project when you don't have the VSSDK installed. You don't have to install it to run the main application though. Just unload that project and you should be good to go.
+
 ## Credits
 
 * [Orignal version](http://niahtextfilter.com/environmentcolorsfinder) ([source code](https://bitbucket.org/grantdavies/vsenvironmentcolorsfinder/src/master)) was created by [Grant Davies](https://twitter.com/GrantTheAnt).
