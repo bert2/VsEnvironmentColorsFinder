@@ -24,9 +24,9 @@
             toolTip.SetToolTip(pickLightDesiredColorBtn, "Pick light theme color from screen.");
             toolTip.SetToolTip(pickBlueDesiredColorBtn, "Pick blue theme color from screen.");
 
-            toolTip.SetToolTip(darkDesiredColorPic, "Select desired dark theme color with color picker dialog.");
-            toolTip.SetToolTip(lightDesiredColorPic, "Select desired light theme color with color picker dialog.");
-            toolTip.SetToolTip(blueDesiredColorPic, "Select desired blue theme color with color picker dialog.");
+            toolTip.SetToolTip(darkDesiredColorPic, "Select desired dark theme color.");
+            toolTip.SetToolTip(lightDesiredColorPic, "Select desired light theme color.");
+            toolTip.SetToolTip(blueDesiredColorPic, "Select desired blue theme color.");
 
             toolTip.SetToolTip(bestMatchesCmb, $"The top {MinNumMatchesToList} matches (incl. color difference).");
 
@@ -121,9 +121,10 @@
 
         private void OnPickDesiredColorBtnClick(TextBox desiredColorTxt) {
             Hide();
-            var overlay = new ColorPickOverlayForm(c => desiredColorTxt.Text = c.ToHex());
-            overlay.Location = Location;
-            overlay.Show(this);
+            new ColorPickOverlayForm {
+                Location = Location,
+                HandlePicked = c => desiredColorTxt.Text = c.ToHex()
+            }.Show(owner: this);
         }
 
         private void CopyToClipboardBtn_Click(object sender, EventArgs e) {
