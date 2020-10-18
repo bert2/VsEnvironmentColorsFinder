@@ -2,6 +2,7 @@
     using System;
     using System.Drawing;
     using System.Drawing.Imaging;
+    using System.Linq;
     using System.Windows.Forms;
 
     public partial class ColorPickOverlayForm : Form {
@@ -19,10 +20,15 @@
 
             Opacity = 0;
 
-            var screen = Screen.FromControl(this);
             var bitmap = new Bitmap(1, 1, PixelFormat.Format32bppArgb);
             var gfx = Graphics.FromImage(bitmap);
-            gfx.CopyFromScreen(click.Location, new Point(0, 0), new Size(1, 1));
+            var screen = Screen.FromControl(this);
+            gfx.CopyFromScreen(
+                new Point(
+                    click.Location.X + screen.Bounds.Location.X,
+                    click.Location.Y + screen.Bounds.Location.Y),
+                new Point(0, 0),
+                new Size(1, 1));
 
             owner.Show();
             handlePicked(bitmap.GetPixel(0, 0));
