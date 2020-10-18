@@ -34,6 +34,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ColorPickOverlayForm";
             this.Opacity = 0.3D;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "ColorPickOverlay";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Click += new System.EventHandler(this.ColorPickOverlay_Click);
